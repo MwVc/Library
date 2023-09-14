@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <link
       href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
       rel="stylesheet"
@@ -13,49 +13,73 @@
     <link rel="stylesheet" href="./css/skeleton.css" />
     <title>LIBRARY</title>
   </head>
-  <body class="container">
-    <div class="eight columns">
-      <table></table>
+  <body>
+    <div class="row">
+      <div class="container">
+        <h1>MwVc</h1>
+      </div>
     </div>
-    <div class="four columns">
-      <form action="#" id="myForm" method="post">
-        <div>
-          <label for="book_title">Book Title</label>
-          <input
-            type="text"
-            id="book_title"
-            name="book_title"
-            required
-            class="u-full-width"
-          />
-        </div>
-        <div>
-          <label for="author">Author</label>
-          <input
-            type="text"
-            id="author"
-            name="author"
-            required
-            class="u-full-width"
-          />
-        </div>
-        <div>
-          <label for="pages">Pages</label>
-          <input type="number" id="pages" min="1" required />
-        </div>
-        <div class="label-body">
-          <label for="read">Have you read it?</label>
-          <select name="isRead" id="read">
-            <option value="true">Yes</option>
-            <option value="false">Nope</option>
-          </select>
-        </div>
+    <div class="container">
+      <div class="nine columns">
+        <p class="u-full-width">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae
+          nostrum quas nobis cum vero quae adipisci rem possimus placeat id,
+          similique obcaecati, tempora eveniet unde asperiores reprehenderit,
+          minus saepe quam?
+        </p>
+        <table class="u-full-width">
+          <thead>
+            <tr class="u-full-width">
+              <th>Book Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="three columns">
+        <form action="#" id="myForm" method="post">
+          <div>
+            <label for="book_title">Book Title</label>
+            <input
+              type="text"
+              id="book_title"
+              name="book_title"
+              required
+              class="u-full-width"
+            />
+          </div>
+          <div>
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              required
+              class="u-full-width"
+            />
+          </div>
+          <div>
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" min="1" required />
+          </div>
+          <div class="label-body">
+            <label for="read">Read status</label>
+            <select name="isRead" id="read">
+              <option value="Read">Read</option>
+              <option value="Not Read">Not Read</option>
+            </select>
+          </div>
 
-        <button id="new-book-btn" type="submit" class="button-primary">
-          Add Book
-        </button>
-      </form>
+          <button id="new-book-btn" type="submit" class="button-primary">
+            Add Book
+          </button>
+        </form>
+      </div>
+      <script src="./JS/index.js"></script>
     </div>
-    <script src="./index.js"></script>
   </body>
 </html>
