@@ -48,29 +48,46 @@ function addBookToLibrary(event) {
 }
 
 function renderBooks() {
-  //Creating toBeRndered variable to manipulate the DOM only once instead of each loop
+  //Creating toBeRendered variable to manipulate the DOM only once instead of each loop
   let toBeRendered = "";
 
   for (let i = 0; i < myLibrary.length; i++) {
-    toBeRendered += `<tr class = "u-full-width" id = "table-row" data-index = "${i}"><td>${myLibrary[i].title}</td><td>${myLibrary[i].author}</td><td>${myLibrary[i].pages}</td><td>${myLibrary[i].isRead}</td><td><button class = "button-primary" id = "delete-btn" data-index = "${i}">Delete</button></td>`;
-
-    tableBody.innerHTML = toBeRendered;
+    toBeRendered += `<tr class = "u-full-width" id = "table-row" data-index = "${i}"><td>${myLibrary[i].title}</td><td>${myLibrary[i].author}</td><td>${myLibrary[i].pages}</td><td><button id="read-status" data-index = "${i}">${myLibrary[i].isRead}</button></td><td><button class = "button-primary" id = "delete-btn" data-index = "${i}">Delete</button></td>`;
   }
-}
 
-// Get all buttons with id attribute of "delete-btn" and store them in the deleteButtons variable
-const deleteButtons = document.querySelectorAll("#delete-btn");
+  tableBody.innerHTML = toBeRendered;
 
-// Loop through the deleteButtons nodelist
-deleteButtons.forEach(function (button) {
-  // pass in the event which contains information about the event that is to  triggered when the button is clicked
-  button.addEventListener("click", function (event) {
-    // Retrieving the value of data attribute of the clicked button
-    const indexToRemove = event.target.dataset.index;
-    // Check if the "indexToRemove" is defined
-    if (indexToRemove !== undefined) {
-      myLibrary.splice(indexToRemove, 1); // Removing the element from the myLibrary array
-      renderBooks();
-    }
+  // Get all buttons with id attribute of "delete-btn" and store them in the deleteButtons variable
+  const deleteButtons = document.querySelectorAll("#delete-btn");
+
+  // Loop through the deleteButtons Nodelist
+  deleteButtons.forEach(function (button) {
+    // pass in the event which contains information about the event that is to  triggered when the button is clicked
+    button.addEventListener("click", function (event) {
+      // Retrieving the value of data attribute of the clicked button
+      const indexToRemove = event.target.dataset.index;
+      // Check if the "indexToRemove" is defined
+      if (indexToRemove !== undefined) {
+        myLibrary.splice(indexToRemove, 1); // Removing the element from the myLibrary array
+        renderBooks();
+      }
+    });
   });
-});
+
+  // Adding a button on each book’s display to change its read status.
+  const toggleReadButtons = document.querySelectorAll("#read-status");
+
+  toggleReadButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      const indexToToggle = event.target.dataset.index;
+      if (indexToToggle !== undefined) {
+        if (myLibrary[indexToToggle].isRead === "Read") {
+          myLibrary[indexToToggle].isRead = "Not Read";
+        } else {
+          myLibrary[indexToToggle].isRead = "Read";
+        }
+        renderBooks();
+      }
+    });
+  });
+}
