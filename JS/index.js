@@ -28,13 +28,17 @@ myForm.addEventListener("submit", addBookToLibrary);
 
 renderBooks();
 
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+// Book class for creating instances of books
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 }
 
+// A function that collects information from the form, calling the Book class creating instances of the books
 function addBookToLibrary(event) {
   event.preventDefault();
 
