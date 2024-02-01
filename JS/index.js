@@ -40,7 +40,7 @@ class Book {
 
 // A function that collects information from the form, calling the Book class creating instances of the books
 function addBookToLibrary(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevents the form from submitting and reload the page
 
   let bookTitle = document.getElementById("book_title").value;
   let author = document.getElementById("author").value;
