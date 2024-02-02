@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIBRARY</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="container">
+        <h1>MwVc</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="nine columns">
+        <p class="u-full-width">
+          Welcome to your personal library. You can add and manage your books
+          using the form on the right.<br />
+          Record your reading status and discover new adventures.
+        </p>
+        <table class="u-full-width">
+          <thead>
+            <tr class="u-full-width">
+              <th>Book Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="three columns">
+        <form action="#" id="myForm" method="post">
+          <div>
+            <label for="book_title">Book Title</label>
+            <input
+              type="text"
+              id="book_title"
+              name="book_title"
+              required
+              class="u-full-width"
+            />
+          </div>
+          <div>
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              required
+              class="u-full-width"
+            />
+          </div>
+          <div>
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" min="1" required />
+          </div>
+          <div class="label-body">
+            <label for="read">Read status</label>
+            <select name="isRead" id="read">
+              <option value="Read">Read</option>
+              <option value="Not Read">Not Read</option>
+            </select>
+          </div>
+
+          <button id="new-book-btn" type="submit" class="button-primary">
+            Add Book
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
