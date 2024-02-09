@@ -10,6 +10,7 @@ import {
   validatePages,
   validateReadStatus,
 } from "./validate";
+import { addBookToLibrary } from "./library";
 
 document.addEventListener("DOMContentLoaded", () => {
   document
@@ -25,34 +26,35 @@ document.addEventListener("DOMContentLoaded", () => {
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (event) => {
-  if (validateForm() == false) {
+  if (!validateForm()) {
     event.preventDefault();
     console.log("The form is not submitting");
   } else {
+    addBookToLibrary();
     console.log("The form has submitted succesfully");
   }
 });
 
-const myLibrary = [
-  {
-    title: "A song of Ice and Fire",
-    author: "George R. R. Martin",
-    pages: 720,
-    isRead: "Not Read",
-  },
-  {
-    title: "The River Between",
-    author: "Ngugi Wa Thion'go",
-    pages: 150,
-    isRead: "Read",
-  },
-  {
-    title: "The River and The Source",
-    author: "Margaret Ogola",
-    pages: 495,
-    isRead: "Read",
-  },
-];
+// const myLibrary = [
+//   {
+//     title: "A song of Ice and Fire",
+//     author: "George R. R. Martin",
+//     pages: 720,
+//     isRead: "Not Read",
+//   },
+//   {
+//     title: "The River Between",
+//     author: "Ngugi Wa Thion'go",
+//     pages: 150,
+//     isRead: "Read",
+//   },
+//   {
+//     title: "The River and The Source",
+//     author: "Margaret Ogola",
+//     pages: 495,
+//     isRead: "Read",
+//   },
+// ];
 
 // Book class for creating instances of books
 class Book {
