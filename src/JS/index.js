@@ -11,6 +11,7 @@ import {
   validateReadStatus,
 } from "./validate";
 import { addBookToLibrary } from "./library";
+import { render } from "./render";
 
 document.addEventListener("DOMContentLoaded", () => {
   document
@@ -32,6 +33,9 @@ form.addEventListener("submit", (event) => {
   } else {
     addBookToLibrary();
     console.log("The form has submitted succesfully");
+    render();
+
+    form.reset();
   }
 });
 
@@ -57,11 +61,11 @@ form.addEventListener("submit", (event) => {
 // ];
 
 // Book class for creating instances of books
-class Book {
-  constructor(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-  }
-}
+// class Book {
+//   constructor(title, author, pages, isRead) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.isRead = isRead;
+//   }
+// }

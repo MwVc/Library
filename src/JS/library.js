@@ -1,3 +1,5 @@
+import { render } from "./render";
+
 class Book {
   constructor(title, author, pages, isRead) {
     this.title = title;
@@ -29,14 +31,14 @@ const myLibrary = [
 ];
 
 const addBookToLibrary = function () {
-  const bookTitle = document.querySelector("#book_title").value;
-  const author = document.querySelector("#author").value;
-  const pages = parseInt(document.querySelector("#pages").value);
-  const readStatus = document.querySelector("#exampleDataList").value;
+  let bookTitle = document.querySelector("#book_title").value;
+  let author = document.querySelector("#author").value;
+  let pages = parseInt(document.querySelector("#pages").value);
+  let readStatus = document.querySelector("#exampleDataList").value;
 
   myLibrary.push(new Book(bookTitle, author, pages, readStatus));
 
   console.log(myLibrary);
 };
 
-export { addBookToLibrary };
+export { addBookToLibrary, myLibrary };
