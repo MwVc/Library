@@ -3,7 +3,35 @@ import "../scss/style.scss";
 
 // Import all of bootstrap's JS
 import * as bootstrap from "bootstrap";
-import { validate } from "./validate";
+import {
+  validateForm,
+  validateBookTitle,
+  validateAuthor,
+  validatePages,
+  validateReadStatus,
+} from "./validate";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelector("#book_title")
+    .addEventListener("input", validateBookTitle);
+  document.querySelector("#author").addEventListener("input", validateAuthor);
+  document.querySelector("#pages").addEventListener("input", validatePages);
+  document
+    .querySelector("#exampleDataList")
+    .addEventListener("input", validateReadStatus);
+});
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  if (validateForm() == false) {
+    event.preventDefault();
+    console.log("The form is not submitting");
+  } else {
+    console.log("The form has submitted succesfully");
+  }
+});
 
 const myLibrary = [
   {
