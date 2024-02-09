@@ -2,11 +2,15 @@ import { myLibrary } from "./library";
 
 const render = function () {
   const cardsContainer = document.getElementById("cards-container");
-  cardsContainer.innerHTML += `<div class="card" style="width: 18rem;">
+  cardsContainer.innerHTML += `<div class="card">
+  <div class="card-header">
+    Quote
+  </div>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <blockquote class="blockquote mb-0">
+      <p>A well-known quote, contained in a blockquote element.</p>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
   </div>
 </div>`;
 };
