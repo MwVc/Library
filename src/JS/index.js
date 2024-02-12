@@ -11,9 +11,9 @@ import {
   validateReadStatus,
 } from "./validate";
 import { addBookToLibrary } from "./library";
-import { render } from "./render";
+import { renderBooks } from "./render";
 
-render();
+renderBooks();
 
 document.addEventListener("DOMContentLoaded", () => {
   document
@@ -35,7 +35,7 @@ form.addEventListener("submit", (event) => {
   } else {
     addBookToLibrary();
     console.log("The form has submitted succesfully");
-    render();
+    renderBooks();
 
     form.reset();
   }

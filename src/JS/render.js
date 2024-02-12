@@ -1,11 +1,13 @@
 import { myLibrary } from "./library";
 const cardsContainer = document.getElementById("cards-container");
 
-const render = function () {
-  let cards = "";
+const renderBooks = function () {
+  render();
+  function render() {
+    let cards = "";
 
-  for (let i = 0; i < myLibrary.length; i++) {
-    cards += `<div class="card text-center my-5" data-index = "${i}">
+    for (let i = 0; i < myLibrary.length; i++) {
+      cards += `<div class="card text-center my-5" data-index = "${i}">
       <div class="card-header">
         Featured
       </div>
@@ -19,24 +21,10 @@ const render = function () {
         2 days ago
       </div>
     </div>`;
+    }
+
+    cardsContainer.innerHTML = cards;
   }
-
-  cardsContainer.innerHTML = cards;
-
-  // Get all buttons with an id attribute of "delete-btn" and store them in the deleteButtons variable
-  const deletButtons = document.querySelectorAll("#delete-btn");
-
-  // Loop through the delete buttons Nodelist
-  deletButtons.forEach((button) => {
-    // Pass in the event that is to be triggered when the button is clicked
-    button.addEventListener("click", (event) => {
-      // Retrieve the data attribute of the clicked button
-      const indexToRemove = button.getAttribute("data-index");
-      console.log(indexToRemove);
-    });
-  });
-
-  const isReadToggleButtons = document.querySelectorAll("#isRead-toggle-btn");
 };
 
-export { render };
+export { renderBooks };
