@@ -13,6 +13,8 @@ import {
 import { addBookToLibrary } from "./library";
 import { render } from "./render";
 
+render();
+
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#book_title")
