@@ -10,24 +10,24 @@ class Book {
 }
 
 const myLibrary = [
-  {
-    title: "A song of Ice and Fire",
-    author: "George R. R. Martin",
-    pages: 720,
-    isRead: "Not Read",
-  },
-  {
-    title: "The River Between",
-    author: "Ngugi Wa Thion'go",
-    pages: 150,
-    isRead: "Read",
-  },
-  {
-    title: "The River and The Source",
-    author: "Margaret Ogola",
-    pages: 495,
-    isRead: "Read",
-  },
+  // {
+  //   title: "A song of Ice and Fire",
+  //   author: "George R. R. Martin",
+  //   pages: 720,
+  //   isRead: "Not Read",
+  // },
+  // {
+  //   title: "The River Between",
+  //   author: "Ngugi Wa Thion'go",
+  //   pages: 150,
+  //   isRead: "Read",
+  // },
+  // {
+  //   title: "The River and The Source",
+  //   author: "Margaret Ogola",
+  //   pages: 495,
+  //   isRead: "Read",
+  // },
 ];
 
 const addBookToLibrary = function () {

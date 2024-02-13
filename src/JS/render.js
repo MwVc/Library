@@ -25,6 +25,14 @@ const renderBooks = function () {
 
     cardsContainer.innerHTML = cards;
   }
+
+  const deleteButtons = document.querySelectorAll("#delete-btn");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.parentNode.parentNode.remove();
+      myLibrary.splice(button.getAttribute("data-index"), 1);
+    });
+  });
 };
 
 export { renderBooks };
