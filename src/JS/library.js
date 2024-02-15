@@ -7,27 +7,20 @@ class Book {
     this.pages = pages;
     this.isRead = isRead;
   }
+
+  changeReadStatus() {
+    if (this.isRead === "Read") {
+      this.isRead = "Not Read";
+    } else {
+      this.isRead = "Read";
+    }
+  }
 }
 
 const myLibrary = [
-  // {
-  //   title: "A song of Ice and Fire",
-  //   author: "George R. R. Martin",
-  //   pages: 720,
-  //   isRead: "Not Read",
-  // },
-  // {
-  //   title: "The River Between",
-  //   author: "Ngugi Wa Thion'go",
-  //   pages: 150,
-  //   isRead: "Read",
-  // },
-  // {
-  //   title: "The River and The Source",
-  //   author: "Margaret Ogola",
-  //   pages: 495,
-  //   isRead: "Read",
-  // },
+  new Book("A song of Ice and Fire", "George R. R. Martin", 720, "Not Read"),
+  new Book("The River Between", "Ngugi wa Thiong'o", 160, "Read"),
+  new Book("The River and The Source", "Margaret Ogola", 495, "Read"),
 ];
 
 const addBookToLibrary = function () {

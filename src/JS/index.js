@@ -36,7 +36,7 @@ form.addEventListener("submit", (event) => {
     addBookToLibrary();
     console.log("The form has submitted succesfully");
     renderBooks();
-
+    event.preventDefault();
     form.reset();
   }
 });
