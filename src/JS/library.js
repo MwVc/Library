@@ -6,6 +6,22 @@ class Book {
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
+    this.timeCreated = new Date();
+  }
+
+  getCurrentPage() {
+    const currentPageNumber = parseInt(prompt("Enter your current page"));
+    if (
+      !isNaN(currentPageNumber) &&
+      currentPageNumber >= 0 &&
+      currentPageNumber <= this.pages
+    ) {
+      console.log(currentPageNumber);
+      return currentPageNumber;
+    } else {
+      alert(`Please enter a number between 0 and ${this.pages}`);
+      return null;
+    }
   }
 
   changeReadStatus() {
