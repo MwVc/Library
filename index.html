@@ -1,69 +1,161 @@
-<head><script defer src="bundle.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve '/home/mwadime/Desktop/javascript/repos  /Library/src/index.html' in '/home/mwadime/Desktop/javascript/repos/Library'
-  ModuleNotFoundError: Module not found: Error: Can't resolve '/home/mwadime/Des  ktop/javascript/repos/Library/src/index.html' in '/home/mwadime/Desktop/javasc  ript/repos/Library'
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /Compilation.js:2029:28
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:817:13
-      at eval (eval at create (/home/mwadime/Desktop/javascript/repos/Library/no  de_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:275:22
-      at eval (eval at create (/home/mwadime/Desktop/javascript/repos/Library/no  de_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:448:22
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:122:11
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:689:25
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:893:8
-      at /home/mwadime/Desktop/javascript/repos/Library/node_modules/webpack/lib  /NormalModuleFactory.js:1013:5
-  
-  - Compilation.js:2029 
-    [Library]/[webpack]/lib/Compilation.js:2029:28
-  
-  - NormalModuleFactory.js:817 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:817:13
-  
-  
-  - NormalModuleFactory.js:275 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:275:22
-  
-  
-  - NormalModuleFactory.js:448 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:448:22
-  
-  - NormalModuleFactory.js:122 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:122:11
-  
-  - NormalModuleFactory.js:689 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:689:25
-  
-  - NormalModuleFactory.js:893 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:893:8
-  
-  - NormalModuleFactory.js:1013 
-    [Library]/[webpack]/lib/NormalModuleFactory.js:1013:5
-  
-  - child-compiler.js:174 
-    [Library]/[html-webpack-plugin]/lib/child-compiler.js:174:18
-  
-  - Compiler.js:564 finalCallback
-    [Library]/[webpack]/lib/Compiler.js:564:5
-  
-  - Compiler.js:590 
-    [Library]/[webpack]/lib/Compiler.js:590:11
-  
-  - Compiler.js:1213 
-    [Library]/[webpack]/lib/Compiler.js:1213:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [Library]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1209 
-    [Library]/[webpack]/lib/Compiler.js:1209:33
-  
-  - Compilation.js:2802 finalCallback
-    [Library]/[webpack]/lib/Compilation.js:2802:11
-  
-  - Compilation.js:3107 
-    [Library]/[webpack]/lib/Compilation.js:3107:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIBRARY</title>
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-light">
+      <div class="container-lg">
+        <a class="navbar-brand fs-2 fw-bolder" href="#">
+          <img
+            src="../src/img/logo_white.png"
+            alt="logo"
+            class="img-fluid"
+            width="100"
+            height="100"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav fs-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="py-5 text-center bg-body-light">
+      <div class="container py-lg-5">
+        <p class="lead text-body-secondary">
+          Welcome to your personal library. You can add and manage your books by
+          clicking the button below.<br />
+          Record your reading status and discover new adventures.
+        </p>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalForm"
+        >
+          Add Book
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="modalForm"
+          tabindex="-1"
+          aria-labelledby="modalFormHeader"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalFormHeader">Add Book</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <form id="myForm" method="get" action="#">
+                    <div class="mb-3">
+                      <label for="book_title" class="form-label"
+                        >Book Title</label
+                      >
+                      <input
+                        type="text"
+                        id="book_title"
+                        name="book_title"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="author" class="form-label">Author</label>
+                      <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="pages" class="form-label">Pages</label>
+                      <input
+                        type="number"
+                        id="pages"
+                        class="form-control"
+                        min="1"
+                      />
+                    </div>
+                    <div class="label-body">
+                      <label for="read" class="form-label">Read status</label>
+                      <input
+                        class="form-control"
+                        list="datalistOptions"
+                        id="exampleDataList"
+                        placeholder="Type to search..."
+                      />
+                      <datalist id="datalistOptions">
+                        <option value="Read"></option>
+                        <option value="Not Read"></option>
+                      </datalist>
+                    </div>
+
+                    <div class="text-center">
+                      <button
+                        id="new-book-btn"
+                        type="submit"
+                        class="btn btn-primary my-3 text-center"
+                      >
+                        Add Book
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 text-center bg-body-secondary min-vh-100">
+      <div class="container min-vh-100" id="cards-container"></div>
+    </section>
+  </body>
+</html>
