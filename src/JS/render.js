@@ -30,7 +30,8 @@ const renderBooks = function () {
 
   const deleteButtons = document.querySelectorAll("#delete-btn");
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
       button.parentNode.parentNode.remove();
       myLibrary.splice(button.getAttribute("data-index"), 1);
     });
@@ -40,7 +41,8 @@ const renderBooks = function () {
     "#is-read-toggle-btn"
   );
   toggleReadStatusButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
       const indexToToggle = parseInt(button.getAttribute("data-index"));
       myLibrary[indexToToggle].changeReadStatus();
       button.innerHTML = myLibrary[indexToToggle].isRead;
@@ -50,7 +52,8 @@ const renderBooks = function () {
 
   const currentPageButtons = document.querySelectorAll("#current-page");
   currentPageButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
       const indexOfBook = parseInt(button.getAttribute("data-index"));
     });
   });
